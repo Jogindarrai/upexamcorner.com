@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <main>
 <?php
 if ( have_posts() ) :
@@ -18,7 +17,5 @@ else :
     echo '<p>No content found</p>';
 endif;
 ?>
-
 </main>
-
 <?php get_footer(); ?>
