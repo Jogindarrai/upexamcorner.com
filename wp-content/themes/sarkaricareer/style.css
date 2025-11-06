@@ -1,0 +1,141 @@
+/*
+Theme Name: sarkaricareer
+Theme URI: http://example.com/my-custom-theme
+Author: Jogindar Rai Das
+Author URI: http://example.com
+Description: A custom theme for WordPress.
+Version: 1.0
+*/
+
+/*Global CSS Start here -----------------------  */
+a{ color: #000; text-decoration: none;}
+.text-black{ color: #000;}
+
+/* Basic Table Border */
+table {
+    border-collapse: collapse; /* Ensures borders are shared between cells */
+    width: 100%;
+    border: 1px solid #333; /* Adjust thickness and color */
+}
+
+/* Table Header Styling */
+table th {
+    border: 1px solid #333; /* Adjust color and thickness */
+    background-color: #f2f2f2; /* Background color for header */
+    padding: 10px; /* Adjust padding as needed */
+    text-align: left;
+}
+
+/* Table Data Cell Styling */
+table td {
+    border: 1px solid #ddd; /* Subtle cell border */
+    padding: 10px; /* Adjust padding as needed */
+    text-align: left;
+}
+
+/* Optional: Add Hover Effect for Rows */
+table tr:hover {
+    background-color: #f5f5f5; /* Row hover background color */
+}
+
+/* Optional: Alternate Row Background Color */
+table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/*Global CSS End  here -----------------------  */
+/*Footer CSS Start here -----------------------  */
+.top-footer{
+    background-size: contain; background-repeat: repeat; padding: 30px 0px;}
+.top-footer h3{ font-size: 24px;  font-weight: 600; margin-bottom: 15px;}
+.top-footer a{ color: #000; text-decoration: none;}
+.top-footer ul{ list-style: none; margin: 0px; padding: 0px;}
+.top-footer .category-list, .top-footer .latest-posts{position: relative;padding-left: 15px;}
+.top-footer .category-list li, .top-footer .latest-posts li { margin-bottom: 10px;}
+.top-footer .category-list li::before, .top-footer .latest-posts li::before  { content: "\276F"; position: absolute;left: 0;color: #000; font-size: 14px;}
+
+
+/*Footer CSS end  here -----------------------  */
+
+/*comments CSS Start here -----------------------  */
+.comments-area{ padding: 30px;}
+.comments-area textarea, .comments-area input[type="text"] { width: 100%; display: block;}
+/*comments CSS Start here -----------------------  */
+
+/* Related post css start here */
+.relatedpost a{ color: #000; text-decoration: none;}
+/* Related post css end  here */
+
+.breadcrumb a{ color: #000; text-decoration: none; font-weight: 500;  }
+#search-2{ margin-bottom:15px; text-align: center; background-color: #f4f4f4; padding: 30px 0px; border-radius: 8px;}
+.sidebar h2{ font-size: 24px;}
+.widget_categories ul{ list-style-type: none; margin: 0px; padding: 0px;}
+.widget_categories ul li {
+    position: relative;
+    padding-left: 15px; /* Add space for the icon */
+}
+
+.widget_categories ul li::before {
+    content: "\276F"; /* Unicode for right arrow */
+    position: absolute;
+    left: 0;
+    color: #000; /* Set color of the arrow */
+    font-size: 14px; /* Adjust size if needed */
+}
+
+
+.widget_categories ul li{ border-bottom:1px dashed #ddd; padding-bottom: 10px; padding-top: 10px;}
+.widget_categories ul li a{ color: #000; text-decoration: none;}
+.auther-tittle a{ color:#000; text-decoration: none;}
+.tagcategories a{ border: solid #000 1px; padding:2px 8px; text-decoration: none; color: #000; border-radius: 6px;}
+
+.navigation.pagination {
+    margin: 20px 0; /* Adds margin above and below the pagination */
+}
+
+.nav-links {
+    display: flex; /* Use flexbox to layout the pagination items */
+    justify-content: center; /* Center the pagination items */
+    flex-wrap: wrap; /* Allow wrapping of items */
+}
+
+.page-numbers {
+    display: inline-block; /* Makes the numbers inline */
+    padding: 10px 15px; /* Adds padding for clickable area */
+    margin: 0 5px; /* Space between pagination items */
+    color: #00293c; /* Bootstrap primary color for links */
+    text-decoration: none; /* Removes underline from links */
+    border: 1px solid #00293c; /* Border to match Bootstrap styles */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Transition effects */
+}
+
+.page-numbers.current {
+    background-color: #00293c; /* Background for the current page */
+    color: white; /* Text color for the current page */
+    border-color: #00293c; /* Ensures border matches background */
+}
+
+.page-numbers:hover:not(.current),
+.page-numbers:focus:not(.current) {
+    background-color: rgba(0, 123, 255, 0.1); /* Light background on hover */
+    color: #00293c; /* Darker text on hover */
+}
+
+.next.page-numbers {
+    background-color: #00293c; /* Same styling as the current page */
+    color: white; /* White text color for the next link */
+    border-color: #00293c; /* Ensures border matches */
+}
+
+/* Optionally style the next link on hover */
+.next.page-numbers:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Light background on hover */
+    color: #00293c; /* Darker text color on hover */
+}
+
+.categories-list a{ color: #000; text-decoration: none;}
+.serch-wrapper a{color: #000; text-decoration: none;}
+.large-post a{ color: #000; text-decoration: none;}
+h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
+.post-categories a{color: #000; font-size: 16px; text-decoration: none; border: solid #000 1px; padding: 2px 10px; border-radius: 8px;; }
