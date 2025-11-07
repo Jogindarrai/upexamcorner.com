@@ -192,5 +192,17 @@ function sarkaricareer_theme_setup() {
 add_action( 'after_setup_theme', 'sarkaricareer_theme_setup' );
 
 
+// Footer Menu Register
+function sarkaricareer_register_menus() {
+    register_nav_menus(array(
+        'primary' => __('Primary Menu', 'sarkaricareer'),
+        'footer'  => __('Footer Menu', 'sarkaricareer')
+    ));
+}
+add_action('after_setup_theme', 'sarkaricareer_register_menus');
+
+
+
+
 
 ?>

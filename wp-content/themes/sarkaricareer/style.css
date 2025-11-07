@@ -45,14 +45,6 @@ table tr:nth-child(even) {
 
 /*Global CSS End  here -----------------------  */
 /*Footer CSS Start here -----------------------  */
-.top-footer{
-    background-size: contain; background-repeat: repeat; padding: 30px 0px;}
-.top-footer h3{ font-size: 24px;  font-weight: 600; margin-bottom: 15px;}
-.top-footer a{ color: #000; text-decoration: none;}
-.top-footer ul{ list-style: none; margin: 0px; padding: 0px;}
-.top-footer .category-list, .top-footer .latest-posts{position: relative;padding-left: 15px;}
-.top-footer .category-list li, .top-footer .latest-posts li { margin-bottom: 10px;}
-.top-footer .category-list li::before, .top-footer .latest-posts li::before  { content: "\276F"; position: absolute;left: 0;color: #000; font-size: 14px;}
 
 
 /*Footer CSS end  here -----------------------  */
@@ -62,32 +54,9 @@ table tr:nth-child(even) {
 .comments-area textarea, .comments-area input[type="text"] { width: 100%; display: block;}
 /*comments CSS Start here -----------------------  */
 
-/* Related post css start here */
-.relatedpost a{ color: #000; text-decoration: none;}
-/* Related post css end  here */
 
 .breadcrumb a{ color: #000; text-decoration: none; font-weight: 500;  }
-#search-2{ margin-bottom:15px; text-align: center; background-color: #f4f4f4; padding: 30px 0px; border-radius: 8px;}
-.sidebar h2{ font-size: 24px;}
-.widget_categories ul{ list-style-type: none; margin: 0px; padding: 0px;}
-.widget_categories ul li {
-    position: relative;
-    padding-left: 15px; /* Add space for the icon */
-}
 
-.widget_categories ul li::before {
-    content: "\276F"; /* Unicode for right arrow */
-    position: absolute;
-    left: 0;
-    color: #000; /* Set color of the arrow */
-    font-size: 14px; /* Adjust size if needed */
-}
-
-
-.widget_categories ul li{ border-bottom:1px dashed #ddd; padding-bottom: 10px; padding-top: 10px;}
-.widget_categories ul li a{ color: #000; text-decoration: none;}
-.auther-tittle a{ color:#000; text-decoration: none;}
-.tagcategories a{ border: solid #000 1px; padding:2px 8px; text-decoration: none; color: #000; border-radius: 6px;}
 
 .navigation.pagination {
     margin: 20px 0; /* Adds margin above and below the pagination */
@@ -139,3 +108,99 @@ table tr:nth-child(even) {
 .large-post a{ color: #000; text-decoration: none;}
 h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
 .post-categories a{color: #000; font-size: 16px; text-decoration: none; border: solid #000 1px; padding: 2px 10px; border-radius: 8px;; }
+/* New css start here ---------------------------------------------------------------------------- */
+.herosection{ background-color: #DDEFFF;}
+
+
+/* ✅ Navbar Font Bigger + Spacing */
+.navbar .navbar-nav.mynav > li > a.nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 14px 22px;
+    color: #222;
+}
+.navbar .navbar-nav.mynav > li > a.nav-link:hover {
+    color: #0d6efd;
+}
+
+/* ✅ Active Link */
+.navbar .navbar-nav.mynav > li.current-menu-item > a.nav-link,
+.navbar .navbar-nav.mynav > li.current-menu-parent > a.nav-link {
+    color: #0d6efd;
+}
+
+/* ✅ Dropdown Items */
+.dropdown-menu {
+    border: none;
+}
+.dropdown-menu .dropdown-item {
+    font-size: 17px;
+    padding: 8px 20px;
+}
+.dropdown-menu .dropdown-item:hover {
+    background: #f8f9fa;
+}
+
+/* ✅ Desktop Animation (Hover) */
+@media (min-width: 992px) {
+    .navbar .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all .25s ease;
+        pointer-events: none;
+    }
+
+    .navbar-nav li.dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}
+
+/* ✅ Submenu Fix */
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* ✅ Submenu Hover (Desktop) */
+@media (min-width: 992px) {
+    .dropdown-submenu:hover > .dropdown-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+}
+
+/* ✅ Mobile Dropdown (click) */
+@media (max-width: 991px) {
+    .dropdown-menu {
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        pointer-events: auto !important;
+    }
+    .dropdown-menu.show {
+        display: block !important;
+    }
+}
+
+/* ✅ Logo */
+.navbar-brand img {
+    height: 80px;
+    width: auto;
+}
+
+
+
+.footer-menu li{ display: inline-block;}
+/* New css end here ---------------------------------------------------------------------------- */
