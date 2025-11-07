@@ -120,25 +120,26 @@ h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
     color: #222;
 }
 .navbar .navbar-nav.mynav > li > a.nav-link:hover {
-    color: #0d6efd;
+    color: #0252a4;
 }
 
 /* ✅ Active Link */
 .navbar .navbar-nav.mynav > li.current-menu-item > a.nav-link,
 .navbar .navbar-nav.mynav > li.current-menu-parent > a.nav-link {
-    color: #0d6efd;
+    color: #0252a4;
 }
 
 /* ✅ Dropdown Items */
-.dropdown-menu {
+.dropdown-menu.mydropdown {
     border: none;
 }
-.dropdown-menu .dropdown-item {
+.dropdown-menu.mydropdown .dropdown-item {
     font-size: 17px;
     padding: 8px 20px;
 }
-.dropdown-menu .dropdown-item:hover {
+.dropdown-menu.mydropdown .dropdown-item:hover {
     background: #f8f9fa;
+    color: #000;
 }
 
 /* ✅ Desktop Animation (Hover) */
@@ -202,5 +203,22 @@ h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
 
 
 
-.footer-menu li{ display: inline-block;}
+.footer-menu li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+
+.footer-menu li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -18px;   /* space adjust */
+    top: 0;
+    color: #999;
+}
+.footer-menu li a {
+    color: #222;
+    text-decoration: none;
+}
+
 /* New css end here ---------------------------------------------------------------------------- */

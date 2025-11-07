@@ -6,7 +6,7 @@ class Bootstrap_NavWalker extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = null ) {
         $indent = str_repeat("\t", $depth);
         $submenu = ($depth >= 1) ? ' dropdown-submenu' : '';
-        $output .= "\n$indent<ul class=\"dropdown-menu$submenu\">\n";
+        $output .= "\n$indent<ul class=\"mydropdown dropdown-menu$submenu\">\n";
     }
 
     public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {

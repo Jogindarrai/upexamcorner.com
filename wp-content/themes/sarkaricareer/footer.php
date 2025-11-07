@@ -19,6 +19,14 @@
                     </div>
                 </div>
             </div>
+
+
+        </div>
+    </div>
+
+       <div class="copyright-footer pt-3 pb-2 border-top">
+        <div class="container-xxl">
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
@@ -29,6 +37,7 @@
 
         </div>
     </div>
+
 </footer>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">

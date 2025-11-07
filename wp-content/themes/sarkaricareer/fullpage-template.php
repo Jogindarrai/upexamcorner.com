@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Full Page
  * Description: A full-width page template without sidebar.
@@ -7,16 +8,23 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main" style="width:100%; max-width:100%; padding:0; margin:0;">
-    <div class="fullpage-wrapper" style="width:100%; padding:0; margin:0;">
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            the_content();
-        endwhile;
-        ?>
+<section class="pt-4 pb-4">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-md-12">
+                                <h1 class="page-title mb-4"><?php the_title(); ?></h1>
+
+                <?php
+                while (have_posts()) :
+                    the_post();
+                    the_content();
+                endwhile;
+                ?>
+
+            </div>
+        </div>
     </div>
-</main>
+</section>
 
 <?php
 get_footer();
