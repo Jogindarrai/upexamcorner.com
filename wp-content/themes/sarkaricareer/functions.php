@@ -203,6 +203,59 @@ add_action('after_setup_theme', 'sarkaricareer_register_menus');
 
 
 
+// ------------------------------------------Daily Quizzes start here--------------------------------
+function create_daily_quiz_post_type() {
+    register_post_type('daily_quiz', array(
+        'labels' => array(
+            'name' => __('Daily Quizzes'),
+            'singular_name' => __('Daily Quiz'),
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array('title'),
+    ));
+}
+add_action('init', 'create_daily_quiz_post_type');
+function add_quiz_meta_boxes() {
+    add_meta_box(
+        'quiz_questions_box',
+        'Quiz Questions (Up to 10)',
+        'quiz_questions_callback',
+        'daily_quiz',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'add_quiz_meta_boxes');
+
+function quiz_questions_callback($post) {
+    $questions = get_post_meta($post->ID, 'quiz_questions', true);
+    if (!is_array($questions)) $questions = [];
+
+    for ($i = 0; $i < 10; $i++) {
+        $q = isset($questions[$i]) ? $questions[$i] : ['question' => '', 'a' => '', 'b' => '', 'c' => '', 'd' => '', 'correct' => ''];
+        ?>
+        <div style="margin-bottom:15px;padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <strong>Question <?php echo $i + 1; ?></strong><br>
+            <input type="text" name="quiz_questions[<?php echo $i; ?>][question]" value="<?php echo esc_attr($q['question']); ?>" placeholder="Question" style="width:100%;margin-bottom:5px;">
+            <input type="text" name="quiz_questions[<?php echo $i; ?>][a]" value="<?php echo esc_attr($q['a']); ?>" placeholder="Option A" style="width:48%;margin-right:2%;">
+            <input type="text" name="quiz_questions[<?php echo $i; ?>][b]" value="<?php echo esc_attr($q['b']); ?>" placeholder="Option B" style="width:48%;"><br>
+            <input type="text" name="quiz_questions[<?php echo $i; ?>][c]" value="<?php echo esc_attr($q['c']); ?>" placeholder="Option C" style="width:48%;margin-right:2%;">
+            <input type="text" name="quiz_questions[<?php echo $i; ?>][d]" value="<?php echo esc_attr($q['d']); ?>" placeholder="Option D" style="width:48%;"><br>
+            <input type="text" name="quiz_questions[<?php echo $i; ?>][correct]" value="<?php echo esc_attr($q['correct']); ?>" placeholder="Correct Answer" style="width:100%;margin-top:5px;">
+        </div>
+        <?php
+    }
+}
+
+function save_quiz_questions($post_id) {
+    if (isset($_POST['quiz_questions'])) {
+        update_post_meta($post_id, 'quiz_questions', $_POST['quiz_questions']);
+    }
+}
+add_action('save_post', 'save_quiz_questions');
+
+// ------------------------------------------Daily Quizzes end here--------------------------------
 
 
 ?>

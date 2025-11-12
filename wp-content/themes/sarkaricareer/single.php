@@ -3,7 +3,7 @@ get_header();
 ?>
 <div class="container-xxl">
     <div class="row" data-adbreak-exclude="true">
-        <div class="col-md-8">
+        <div class="col-md-12">
                 <?php
                 // Start the Loop.
                 while (have_posts()) :
@@ -34,7 +34,7 @@ get_header();
         </div>
     </div>
 
-    
+
 </div>
         <div class="extra-info mt-2">
             <span><i class="fa-regular fa-calendar-days"></i></span>
@@ -42,108 +42,13 @@ get_header();
             <span><?php echo get_the_date(); ?></span>
         </div>
 
-       
+
                         </section>
                         <section>
-                            
 
-              <!--Slide content display  code start here -->
-     <?php
-$content = apply_filters('the_content', get_the_content());
-
-$paragraphs = explode('</p>', $content);
-
-$first_part = implode('</p>', array_slice($paragraphs, 0, 4)) . '</p>';
-
-$remaining_part = '';
-if (count($paragraphs) > 4) {
-    $remaining_part = implode('</p>', array_slice($paragraphs, 4));
-}
-?>
-
-<!-- Google AdSense Bottom Ad -->
-<div class=" my-4">
-  <div class="text-center">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3753466543508466"
-     crossorigin="anonymous"></script>
-
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3753466543508466"
-         data-ad-slot="8895405869"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-</div>
-<!-- End Google AdSense Bottom Ad -->
-
-<div class="post-content position-relative">
-  <div id="postShortContent">
-    <div class="blur">
-    <?php echo $first_part; ?>
-    </div>
-    <?php if (!empty($remaining_part)) : ?>
-<div class="d-grid gap-2 col-4 mx-auto mt-4 mb-4">
-  <a href="#" id="readMoreBtn" class="btn btn-dark mt-2">Read full post </a>
-</div>
-
-<?php endif; ?>
-  </div>
-
-  <?php if (!empty($remaining_part)) : ?>
-    <div id="postFullContent" class="collapse mt-3">
-      <?php echo $remaining_part; ?>
+   <?php the_content(); ?>
 
 
-    </div>
-  <?php endif; ?>
-
-
-
-
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const readMoreBtn = document.getElementById("readMoreBtn");
-  const postFullContent = document.getElementById("postFullContent");
-  const blurDiv = document.querySelector(".blur");
-
-  if (readMoreBtn && postFullContent) {
-    readMoreBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-
-      // Bootstrap collapse toggle
-      const bsCollapse = new bootstrap.Collapse(postFullContent, {
-        toggle: true
-      });
-
-      // Blur class hatana
-      if (blurDiv) {
-        blurDiv.classList.remove("blur");
-      }
-
-      // Button hide karna
-      readMoreBtn.style.display = "none";
-    });
-  }
-});
-</script>
-
-
-                            <style>
-                                #postFullContent {
-                                    transition: all 0.4s ease-in-out;
-                                }
-                                .blur{ overflow: auto;
-  background: #fff;
-  /* mask gradient — bottom se transparent tak approx 100px */
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 100px), rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 100px), rgba(0,0,0,0) 100%);}
-                            </style>
- <!--Slide content display  code end here -->
 
                         </section>
                         <div class="row">
@@ -237,24 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         <!-- Related post display end here  -->
 
 
-<!-- Google AdSense Bottom Ad -->
-<div class=" my-4">
-  <div class="text-center">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3753466543508466"
-     crossorigin="anonymous"></script>
-
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3753466543508466"
-         data-ad-slot="6665646583"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-</div>
-<!-- End Google AdSense Bottom Ad -->
 
 
 
@@ -274,19 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
          </div>
-        <div class="col-md-4">
-<figure class="sticky-top" data-bs-toggle="modal" data-bs-target="#myModal" style="cursor: pointer; text-align:right">
-    <img src="https://www.registrationkraft.com/wp-content/uploads/2025/03/CTA-Registationkraft-1.jpg" alt="Start a business" class="img-fluid">
-</figure>
 
-<?php echo do_shortcode('[wpcode id="916"]'); ?>
-
-            <section class="shadow-sm p-3 sidebar d-none ">
-                <?php
-                get_sidebar();
-                ?>
-            </section>
-        </div>
     </div>
 
 
