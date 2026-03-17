@@ -18,7 +18,7 @@ get_header();
                             <div class="post-thumbnail">
                                 <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
                             </div>
- <div class="d-flex align-items-center mt-4">
+ <div class="d-flex align-items-center mt-4 d-none">
     <!-- Author Picture -->
     <div class="flex-shrink-0">
         <a class="mg-author-pic me-2" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
@@ -27,7 +27,7 @@ get_header();
     </div>
 
     <!-- Author Name and Title -->
-    <div class="flex-grow-1">
+    <div class="flex-grow-1 d-none">
         <div class="media-heading auther-tittle">
             <span><?php esc_html_e('By', 'newsup'); ?></span>
             <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
@@ -36,7 +36,7 @@ get_header();
 
 
 </div>
-        <div class="extra-info mt-2">
+        <div class="extra-info mt-2  d-none">
             <span><i class="fa-regular fa-calendar-days"></i></span>
             <span><?php esc_html_e('Published on:', 'newsup'); ?></span>
             <span><?php echo get_the_date(); ?></span>
