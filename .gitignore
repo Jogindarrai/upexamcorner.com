@@ -1,3 +1,5 @@
-wp-content/uploads/
+# WordPress
 wp-config.php
-.DS_Store
+
+# Uploads
+wp-content/uploads/
