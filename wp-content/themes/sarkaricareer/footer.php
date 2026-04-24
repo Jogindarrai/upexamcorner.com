@@ -30,8 +30,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
-                        Copyright 2025. Sarkaricareer All rights reserved. ​
+                      Copyright © 2025-2026 UPExamCorner.com — All Rights Reserved
                     </div>
+                    <div class="text-center mt-2 mb-2">Sarkari Naukri, Result, Admit Card, Syllabus & Study Material for UP & All India Exams
+</div>
                 </div>
             </div>
 

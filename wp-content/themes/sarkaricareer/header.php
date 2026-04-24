@@ -9,12 +9,10 @@
 </head>
 <body <?php body_class(); ?>>
 <header>
-
     <!-- ✅ TOP SECTION: Logo + Heading + Subheading -->
     <div class="bg-white py-3">
         <div class="container-xxl">
             <div class="d-flex align-items-center gap-3">
-
                 <!-- Logo -->
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php if (has_custom_logo()) : ?>
@@ -29,7 +27,6 @@
                              style="height:100px;width:auto;" alt="Logo">
                     <?php endif; ?>
                 </a>
-
                 <!-- Heading + Subheading -->
                 <div class="text-center w-100">
                     <h1 class="mb-0 fw-bold text-danger" style="font-size:28px;">
@@ -39,11 +36,11 @@
                         <?php bloginfo('description'); ?>
                     </p>
                 </div>
-
             </div>
+
+
         </div>
     </div>
-
     <!-- ✅ LINE -->
     <hr class="m-0">
 
@@ -78,5 +75,25 @@
         </div>
     </nav>
     <hr class="m-0">
-
 </header>
+
+<section>
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center mt-3 mb-3">
+<h1 class="fs-2 mt-3 mb-3">★ Welcome to UP Exam Corner — #1 Government Job & Exam Portal ★</h1>
+<p class="mb-0">
+    Latest Sarkari Jobs, Results, Admit Card, Syllabus & Study Material — All in One Place
+</p>
+<p>
+    Trusted by Lakhs of Students for UP & All India Competitive Exam Updates
+
+</p>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+</section>
