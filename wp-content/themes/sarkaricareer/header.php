@@ -12,7 +12,7 @@
     <!-- ✅ TOP SECTION: Logo + Heading + Subheading -->
     <div class="bg-white py-3">
         <div class="container-xxl">
-            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center gap-3 justify-content-center">
                 <!-- Logo -->
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php if (has_custom_logo()) : ?>
@@ -28,14 +28,14 @@
                     <?php endif; ?>
                 </a>
                 <!-- Heading + Subheading -->
-                <div class="text-center w-100">
+                <!-- <div class="text-center w-100">
                     <h1 class="mb-0 fw-bold text-danger" style="font-size:28px;">
                         <?php bloginfo('name'); ?>
                     </h1>
                     <p class="mb-0 text-muted" style="font-size:13px;">
                         <?php bloginfo('description'); ?>
                     </p>
-                </div>
+                </div> -->
             </div>
 
 
