@@ -41,9 +41,80 @@ get_header();
 
 
                     </section>
-                    <section>
-                        <?php the_content(); ?>
-                    </section>
+              <section class="py-4">
+    <div class="container-fluid px-0">
+        <div class="row g-4">
+
+            <!-- Left Side - Main Content -->
+            <div class="col-lg-8 col-md-7">
+                <div class="post-content-left">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+
+            <!-- Right Side - Sidebar -->
+            <div class="col-lg-4 col-md-5">
+                <div class="post-sidebar sticky-top" style="top: 80px;">
+
+                    <!-- Widget 1: Categories -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">📂 Categories</h5>
+                        </div>
+                        <div class="card-body">
+                            <?php wp_list_categories([
+                                'show_count' => true,
+                                'title_li'   => '',
+                                'orderby'    => 'name'
+                            ]); ?>
+                        </div>
+                    </div>
+
+                    <!-- Widget 2: Recent Posts -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">📰 Recent Posts</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <?php
+                            $recent_posts = wp_get_recent_posts([
+                                'numberposts' => 5,
+                                'post_status' => 'publish'
+                            ]);
+                            foreach ($recent_posts as $post) : ?>
+                                <a href="<?php echo get_permalink($post['ID']); ?>"
+                                   class="d-flex align-items-center p-3 border-bottom text-decoration-none text-dark hover-bg">
+                                    <?php if (has_post_thumbnail($post['ID'])) : ?>
+                                        <img src="<?php echo get_the_post_thumbnail_url($post['ID'], 'thumbnail'); ?>"
+                                             class="rounded me-3"
+                                             style="width:60px; height:60px; object-fit:cover;"
+                                             alt="">
+                                    <?php endif; ?>
+                                    <span class="small fw-semibold">
+                                        <?php echo esc_html($post['post_title']); ?>
+                                    </span>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <!-- Widget 3: Tags -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-warning">
+                            <h5 class="mb-0">🏷️ Tags</h5>
+                        </div>
+                        <div class="card-body">
+                            <?php the_tags('<div class="d-flex flex-wrap gap-2">', '', '</div>'); ?>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Right Side End -->
+
+        </div>
+    </div>
+</section>
                     <div class="row">
                         <div class="col-md-6">
                             <!--Post view display code start here--->

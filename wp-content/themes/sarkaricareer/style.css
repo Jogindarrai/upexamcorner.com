@@ -226,3 +226,58 @@ h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
 
 /* New css end here ---------------------------------------------------------------------------- */
 /* ===== Sidebar Main Box ===== */ #secondary .card { border: none; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); background: #ffffff; } /* ===== Header ===== */ #secondary .card-header { background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 18px 25px; border: none; } #secondary .card-header h5 { margin: 0; font-size: 28px; font-weight: 700; color: #fff; } /* ===== Body ===== */ #secondary .card-body { padding: 30px 25px !important; background: #ffffff; } /* ===== Widgets spacing ===== */ #secondary .widget { margin-bottom: 28px; } #secondary .widget:last-child { margin-bottom: 0; } /* ===== Widget Titles ===== */ #secondary .widget-title { font-size: 42px; font-weight: 700; color: var(--primary); margin-bottom: 18px; line-height: 1.2; } /* ===== Search Box ===== */ #secondary .wp-block-search__inside-wrapper, #secondary .search-form { display: flex; gap: 10px; } #secondary input[type="search"], #secondary input[type="text"] { width: 100%; height: 52px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 15px; font-size: 17px; outline: none; } #secondary input[type="search"]:focus, #secondary input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(18,114,223,.12); } /* ===== Search Button ===== */ #secondary button, #secondary input[type="submit"] { height: 52px; padding: 0 22px; border: none; border-radius: 10px; background: var(--secondary); color: #fff; font-size: 17px; font-weight: 600; transition: .3s ease; } #secondary button:hover, #secondary input[type="submit"]:hover { background: var(--primary); } /* ===== Recent Post Links ===== */ #secondary ul { list-style: none; padding: 0; margin: 0; } #secondary ul li { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #f1f1f1; } #secondary ul li:last-child { border-bottom: none; } #secondary ul li a { text-decoration: none; font-size: 20px; line-height: 1.6; color: var(--accent); font-weight: 500; transition: .3s; } #secondary ul li a:hover { color: var(--primary); padding-left: 4px; } /* ===== Categories Bullet ===== */ #secondary .widget_categories ul li::before { content: "• "; color: var(--secondary); font-weight: bold; margin-right: 6px; } /* ===== Mobile ===== */ @media (max-width: 767px) { #secondary { margin-top: 30px; } #secondary .card-body { padding: 22px 18px !important; } #secondary .widget-title { font-size: 32px; } #secondary .card-header h5 { font-size: 24px; } #secondary ul li a { font-size: 18px; } #secondary button, #secondary input[type="submit"] { padding: 0 16px; font-size: 15px; } }
+/* Hover effect for recent posts */
+.hover-bg:hover {
+    background-color: #f8f9fa;
+}
+
+/* Left content styling */
+.post-content-left img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.post-content-left h1,
+.post-content-left h2,
+.post-content-left h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Sidebar category list */
+.post-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-sidebar ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.post-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.post-sidebar ul li a:hover {
+    color: #fe5c0c;
+}
+
+/* Tags styling */
+.post-sidebar .tags-links a {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #e9ecef;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+.post-sidebar .tags-links a:hover {
+    background: #fe5c0c;
+    color: white;
+}
