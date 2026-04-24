@@ -12,7 +12,7 @@ get_header();
     <div class="container-xxl">
         <div class="row">
             <div class="col-md-12">
-                                <h1 class="page-title mb-4"><?php the_title(); ?></h1>
+                                <!-- <h1 class="page-title mb-4"><?php the_title(); ?></h1> -->
 
                 <?php
                 while (have_posts()) :
