@@ -74,20 +74,17 @@
             </nav>
         </div>
     </header>
-    <section>
-        <div class="container-xxl">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center mt-3 mb-3">
-                        <h1 class="fs-2 mt-3 mb-3">★ Welcome to UP Exam Corner — #1 Government Job & Exam Portal ★</h1>
-                        <p class="mb-0">
-                            Latest Sarkari Jobs, Results, Admit Card, Syllabus & Study Material — All in One Place
-                        </p>
-                        <p>
-                            Trusted by Lakhs of Students for UP & All India Competitive Exam Updates
-                        </p>
-                    </div>
+<section class="herosection-header">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-content">
+                    <h2>★ Welcome to UP Exam Corner — #1 Government Job & Exam Portal ★</h2>
+                    <p class="tagline">Latest Sarkari Jobs, Results, Admit Card, Syllabus & Study Material</p>
+                    <p class="subtitle">Trusted by Lakhs of Students for UP & All India Competitive Exam Updates</p>
+                    <span class="tag">All in One Place</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

@@ -728,7 +728,7 @@ h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
 .herosection .card .card-header h3 {
     font-size: 20px;
     font-weight: 700;
-    color: var(--secondary);
+    color: #fff;
     margin-bottom: 6px;
     letter-spacing: 0.3px;
 }
@@ -913,6 +913,84 @@ ONLY QUIZ PAGE  start here
     color:var(--primary);
     font-weight:700;
 }
+
 /* ============================================================
-ONLY QUIZ PAGE  end here
- ============================================================ */
+   HERO SECTION HEADER - Option A (White Card)
+   Parent: .herosection-header
+   --primary: #062660 | --secondary: #ff5b0e | --accent: #1272df
+   ============================================================ */
+
+.herosection-header {
+    background: #f4f7fc;
+    padding: 20px 0;
+}
+
+.herosection-header .header-content {
+    background: #ffffff;
+    border-bottom: 4px solid var(--primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(6, 38, 96, 0.08);
+    padding: 20px 28px;
+    text-align: center;
+}
+
+/* ===== Heading ===== */
+.herosection-header .header-content h2 {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+/* ===== Tagline ===== */
+.herosection-header .header-content .tagline {
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 4px 0;
+    line-height: 1.6;
+}
+
+/* ===== Subtitle ===== */
+.herosection-header .header-content .subtitle {
+    color: #666;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+/* ===== Tag Badge ===== */
+.herosection-header .header-content .tag {
+    display: inline-block;
+    background: #fff3ee;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 91, 14, 0.2);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 767px) {
+    .herosection-header {
+        padding: 14px 0;
+    }
+    .herosection-header .header-content {
+        padding: 16px 18px;
+    }
+    .herosection-header .header-content h2 {
+        font-size: 16px;
+    }
+    .herosection-header .header-content .tagline {
+        font-size: 13px;
+    }
+    .herosection-header .header-content .subtitle {
+        font-size: 12px;
+    }
+}
+/* ============================================================
+End of HERO SECTION HEADER - Option A (White Card)
+   ============================================================ */
