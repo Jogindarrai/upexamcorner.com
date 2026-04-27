@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,27 +9,27 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
-<header>
-    <!-- ✅ TOP SECTION: Logo + Heading + Subheading -->
-    <div class="bg-white py-3">
-        <div class="container-xxl">
-            <div class="d-flex align-items-center gap-3 justify-content-center">
-                <!-- Logo -->
-                <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <?php if (has_custom_logo()) : ?>
-                        <?php echo wp_get_attachment_image(
-                            get_theme_mod('custom_logo'),
-                            'full',
-                            false,
-                            array('style' => 'height:100px;width:auto;')
-                        ); ?>
-                    <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"
-                             style="height:100px;width:auto;" alt="Logo">
-                    <?php endif; ?>
-                </a>
-                <!-- Heading + Subheading -->
-                <!-- <div class="text-center w-100">
+    <header>
+        <!-- ✅ TOP SECTION: Logo + Heading + Subheading -->
+        <div class="bg-white py-3">
+            <div class="container-xxl">
+                <div class="d-flex align-items-center gap-3 justify-content-center">
+                    <!-- Logo -->
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                        <?php if (has_custom_logo()) : ?>
+                            <?php echo wp_get_attachment_image(
+                                get_theme_mod('custom_logo'),
+                                'full',
+                                false,
+                                array('style' => 'height:100px;width:auto;')
+                            ); ?>
+                        <?php else : ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"
+                                style="height:100px;width:auto;" alt="Logo">
+                        <?php endif; ?>
+                    </a>
+                    <!-- Heading + Subheading -->
+                    <!-- <div class="text-center w-100">
                     <h1 class="mb-0 fw-bold text-danger" style="font-size:28px;">
                         <?php bloginfo('name'); ?>
                     </h1>
@@ -36,64 +37,57 @@
                         <?php bloginfo('description'); ?>
                     </p>
                 </div> -->
+                </div>
             </div>
-
-
         </div>
-    </div>
-    <!-- ✅ LINE -->
-    <hr class="m-0">
+        <!-- ✅ LINE -->
+        <!-- ✅ NAVIGATION -->
+        <div class="site-header">
+            <nav class="navbar navbar-expand-lg  py-0">
+                <div class="container-xxl">
 
-    <!-- ✅ NAVIGATION -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light py-0">
-        <div class="container-xxl">
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggler my-1" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainMenu"
+                        aria-controls="mainMenu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-            <!-- Mobile Toggle -->
-            <button class="navbar-toggler my-1" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainMenu"
-                aria-controls="mainMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'primary',
+                            'menu_class'     => 'navbar-nav mx-auto mynav',
+                            'container'      => false,
+                            'fallback_cb'    => false,
+                            'depth'          => 3,
+                            'walker'         => new Bootstrap_NavWalker(),
+                        ));
+                        ?>
+                    </div>
 
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'menu_class'     => 'navbar-nav mx-auto mynav',
-                    'container'      => false,
-                    'fallback_cb'    => false,
-                    'depth'          => 3,
-                    'walker'         => new Bootstrap_NavWalker(),
-                ));
-                ?>
-            </div>
-
+                </div>
+            </nav>
         </div>
-    </nav>
-    <hr class="m-0">
-</header>
-
-<section>
+    </header>
+    <section>
         <div class="container-xxl">
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center mt-3 mb-3">
-<h1 class="fs-2 mt-3 mb-3">★ Welcome to UP Exam Corner — #1 Government Job & Exam Portal ★</h1>
-<p class="mb-0">
-    Latest Sarkari Jobs, Results, Admit Card, Syllabus & Study Material — All in One Place
-</p>
-<p>
-    Trusted by Lakhs of Students for UP & All India Competitive Exam Updates
-
-</p>
+                        <h1 class="fs-2 mt-3 mb-3">★ Welcome to UP Exam Corner — #1 Government Job & Exam Portal ★</h1>
+                        <p class="mb-0">
+                            Latest Sarkari Jobs, Results, Admit Card, Syllabus & Study Material — All in One Place
+                        </p>
+                        <p>
+                            Trusted by Lakhs of Students for UP & All India Competitive Exam Updates
+                        </p>
                     </div>
                 </div>
-
             </div>
-
-    </div>
-</section>
+        </div>
+    </section>

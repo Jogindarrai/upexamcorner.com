@@ -4,9 +4,6 @@
         <div class="row">
             <!-- Sidebar code start here------------------------------>
             <div class="col-md-4 order-lg-2 order-md-2">
-
-
-
                 <aside class="sticky-top pt-2 pb-2 formbg mt-4">
                     <div class="p-2 p-md-4">
                         <h2 class="text-center fs-3 fw-bold">Get a Free Consultation</h2>
@@ -129,19 +126,19 @@
                                                         <?php foreach ($types as $type): ?>
                                                             <div class="col-md-4 service-type mb-4">
                                                                 <div class="customs-shadowbox h-100">
-                                                                <?php if (!empty($type['title'])): ?>
-                                                                    <div class="fw-bold bghead  text-white pt-2 pb-3 text-center"><?php echo esc_html($type['title']); ?></div>
-                                                                <?php endif; ?>
-
-                                                                <?php if (!empty($type['image'])): ?>
-                                                                    <figure class="text-center mb-2 mt-3">
-                                                                    <img src="<?php echo esc_url($type['image']); ?>" alt="<?php echo esc_attr($type['title']); ?>" class="type-icon" style="height:60px;">
-                                                                    </figure>
+                                                                    <?php if (!empty($type['title'])): ?>
+                                                                        <div class="fw-bold bghead  text-white pt-2 pb-3 text-center"><?php echo esc_html($type['title']); ?></div>
                                                                     <?php endif; ?>
 
-                                                                <?php if (!empty($type['subtitle'])): ?>
-                                                                    <p class="p-2 text-center"><?php echo nl2br(esc_html($type['subtitle'])); ?></p>
-                                                                <?php endif; ?>
+                                                                    <?php if (!empty($type['image'])): ?>
+                                                                        <figure class="text-center mb-2 mt-3">
+                                                                            <img src="<?php echo esc_url($type['image']); ?>" alt="<?php echo esc_attr($type['title']); ?>" class="type-icon" style="height:60px;">
+                                                                        </figure>
+                                                                    <?php endif; ?>
+
+                                                                    <?php if (!empty($type['subtitle'])): ?>
+                                                                        <p class="p-2 text-center"><?php echo nl2br(esc_html($type['subtitle'])); ?></p>
+                                                                    <?php endif; ?>
                                                                 </div>
                                                             </div>
                                                         <?php endforeach; ?>
@@ -234,8 +231,8 @@
                     <!-- Document conent displlay code end here  -->
                 </section>
 
-                           <!-- Why choose us content start here -->
-                           <section class="bg-white pt-4 pb-4">
+                <!-- Why choose us content start here -->
+                <section class="bg-white pt-4 pb-4">
                     <div class="container-xxl">
                         <div class="row">
                             <div class="col-md-12">
@@ -251,7 +248,7 @@
                                         <div class="service-details">
                                             <div class="why-choose-us">
                                                 <?php if ($why_choose_us_title) : ?>
-                                                    <h2  class="fs-3 fw-bold"><?php echo esc_html($why_choose_us_title); ?></h2>
+                                                    <h2 class="fs-3 fw-bold"><?php echo esc_html($why_choose_us_title); ?></h2>
                                                 <?php endif; ?>
 
                                                 <?php if ($why_choose_us_subtitle) : ?>
@@ -275,7 +272,7 @@
                 <!-- Why choose us content end  here -->
 
 
-                       <!-- Testimonial code start here  -->
+                <!-- Testimonial code start here  -->
                 <section>
                     <div class="container my-5">
                         <div class="row">
@@ -333,7 +330,8 @@
                         });
                     </script>
                 </section>
-                <!-- Testimonial code end here  -->                <section>
+                <!-- Testimonial code end here  -->
+                <section>
                     <?php
                     $faqs = get_post_meta(get_the_ID(), '_service_faqs', true);
                     if (!empty($faqs)) : ?>
@@ -359,147 +357,10 @@
                             </div>
                         </div>
                 </section>
-
-                <!-- Cta start here -->
-
-<section class="mt-5 mb-4 border rounded ctabg p-4 d-none">
-					<div class="row">
-						<div class="col-xl-6 col-md-6 mb-30">
-							<div class="single-cta">
-								<!-- <i class="fa fa-map-marker"></i> -->
-								<div class="cta-text">
-									<h4>Find us</h4>
-									<span>KD-137 Ground Floor, Pitampura, New Delhi, Delhi 110034</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6 col-md-6 mb-30">
-							<div class="single-cta pb-2 border-bottom">
-								<i class="fa fa-phone"></i>
-								<div class="cta-text">
-									<h4>Call us</h4>
-									<span>+91-9810-602-899</span>
-								</div>
-							</div>
-
-							<div class="single-cta mt-2">
-								<i class="fa fa-envelope-open"></i>
-								<div class="cta-text">
-									<h4>Mail us</h4>
-									<span><a href="mailto: support@registrationkraft.com
-" class="text-dark"> support@registrationkraft.com
-</a></span>
-								</div>
-							</div>
-						</div>
-
-					</div>
-</section>
-
-<style>
-.single-cta i {
-    color: #212529;
-    font-size: 30px;
-    float: left;
-    margin-top: 8px;
-}
-
-.cta-text {
-    padding-left: 15px;
-    display: inline-block;
-}
-</style>
-
-
-                <!-- Cta end here -->
-
-
-
-
-
             </div>
             <!-- Main content code end here------------------------------>
         </div>
     </div>
 </main>
-<style>
-    .ctabg {
-        background-color: #f9dece;
-
-    }
-
-    .process-wrapper {
-        border-radius: 20px 20px 0px 0px;
-    }
-
-    .process-item {
-        border-radius: 15px;
-    }
-
-    @media (min-width: 768px) {
-        .text-white-md {
-            color: #fff;
-        }
-
-        .mainbg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1)), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>');
-            background-position: center center;
-            background-size: cover;
-            height: 400px;
-            /* Set a fixed height for the background image */
-            width: 100%;
-            /* Ensure it covers the entire width of the parent */
-            z-index: -1;
-            /* Keeps the background behind the content */
-        }
-
-        .mainbg {
-            background-position: center center;
-            position: relative;
-
-        }
-    }
-
-    .accordion-button .toggle-icon {
-        font-size: 1.5rem;
-        transition: transform 0.3s;
-    }
-
-    .accordion-button:not(.collapsed) .toggle-icon {
-        transform: rotate(45deg);
-    }
-
-    .formbg {
-        background-color: #ffffff;
-        background-image:
-            radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
-            radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
-        background-size: 200px 200px;
-        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
-        border-radius: 22px;
-        ;
-    }
-
-    .customs-shadowbox{
-    box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
-    border-radius: 15px 15px 4px 4px;
-
- }
-
-.bghead{
-    background: linear-gradient(135deg, #00293c, #6693a3);
-    border-radius: 15px 15px 4px 4px;
-
-
-}
-
-</style>
 <!-- Bootstrap 5 JS -->
 <?php get_footer(); ?>

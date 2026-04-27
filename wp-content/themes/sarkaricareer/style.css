@@ -11,7 +11,8 @@ Version: 1.0
 a{ color: #000; text-decoration: none;}
 .text-black{ color: #000;}
 
-/* ===== Theme Colors ===== */ :root{ --primary:#062660; --secondary:#ff5b0e; --accent:#1272df; }
+/* ===== Theme Colors ===== */
+ :root{ --primary:#062660; --secondary:#ff5b0e; --accent:#1272df; }
 
 
 /* Basic Table Border */
@@ -112,51 +113,120 @@ table tr:nth-child(even) {
 h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
 .post-categories a{color: #000; font-size: 16px; text-decoration: none; border: solid #000 1px; padding: 2px 10px; border-radius: 8px;; }
 /* New css start here ---------------------------------------------------------------------------- */
-.herosection{}
 
+/* Navar css start  here-------------------------------------------------------- */
+.site-header .navbar {
+    background-color: var(--primary);
+    border-bottom: 3px solid var(--secondary);
+    box-shadow: 0 2px 12px rgba(6, 38, 96, 0.5);
+}
 
-/* ✅ Navbar Font Bigger + Spacing */
-.navbar .navbar-nav.mynav > li > a.nav-link {
+/* ✅ Top-Level Nav Links */
+.site-header .navbar .navbar-nav.mynav > li > a.nav-link {
     font-size: 18px;
     font-weight: 600;
     padding: 14px 22px;
-    color: #222;
-}
-.navbar .navbar-nav.mynav > li > a.nav-link:hover {
-    color: #0252a4;
+    color: #ffffff;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-/* ✅ Active Link */
-.navbar .navbar-nav.mynav > li.current-menu-item > a.nav-link,
-.navbar .navbar-nav.mynav > li.current-menu-parent > a.nav-link {
-    color: #0252a4;
+/* ✅ Underline Indicator */
+.site-header .navbar .navbar-nav.mynav > li > a.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 22px;
+    right: 22px;
+    height: 2px;
+    background: var(--secondary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+.site-header .navbar .navbar-nav.mynav > li > a.nav-link:hover::after,
+.site-header .navbar .navbar-nav.mynav > li.current-menu-item > a.nav-link::after,
+.site-header .navbar .navbar-nav.mynav > li.current-menu-parent > a.nav-link::after {
+    transform: scaleX(1);
+}
+
+/* ✅ Hover Color */
+.site-header .navbar .navbar-nav.mynav > li > a.nav-link:hover {
+    color: var(--secondary);
+}
+
+/* ✅ Active / Current Page Link */
+.site-header .navbar .navbar-nav.mynav > li.current-menu-item > a.nav-link,
+.site-header .navbar .navbar-nav.mynav > li.current-menu-parent > a.nav-link {
+    color: var(--secondary);
+}
+
+/* ✅ Dropdown Menu */
+.site-header .dropdown-menu.mydropdown {
+    background-color: var(--primary);
+    border: none;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 24px rgba(6, 38, 96, 0.4);
+    padding: 8px 0;
+    min-width: 220px;
 }
 
 /* ✅ Dropdown Items */
-.dropdown-menu.mydropdown {
-    border: none;
-}
-.dropdown-menu.mydropdown .dropdown-item {
-    font-size: 17px;
-    padding: 8px 20px;
-}
-.dropdown-menu.mydropdown .dropdown-item:hover {
-    background: #f8f9fa;
-    color: #000;
+.site-header .dropdown-menu.mydropdown .dropdown-item {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    color: #d0dff7;
+    transition: all 0.25s ease;
+    border-left: 3px solid transparent;
 }
 
-/* ✅ Desktop Animation (Hover) */
+/* ✅ Dropdown Item Hover */
+.site-header .dropdown-menu.mydropdown .dropdown-item:hover {
+    background-color: rgba(18, 114, 223, 0.15);
+    color: #ffffff;
+    border-left-color: var(--secondary);
+    padding-left: 26px;
+}
+
+/* ✅ Dropdown Active Item */
+.site-header .dropdown-menu.mydropdown .dropdown-item.active,
+.site-header .dropdown-menu.mydropdown .current-menu-item > .dropdown-item {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-left-color: var(--secondary);
+}
+
+/* ✅ Dropdown Divider */
+.site-header .dropdown-menu.mydropdown .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ Mobile Toggle Button */
+.site-header .navbar-toggler {
+    border-color: var(--accent);
+    padding: 6px 10px;
+}
+.site-header .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(18, 114, 223, 0.4);
+}
+.site-header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ✅ Desktop Hover Animation */
 @media (min-width: 992px) {
-    .navbar .dropdown-menu {
+    .site-header .navbar .dropdown-menu {
         display: block;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(15px);
-        transition: all .25s ease;
+        transform: translateY(12px);
+        transition: all 0.25s ease;
         pointer-events: none;
     }
-
-    .navbar-nav li.dropdown:hover > .dropdown-menu {
+    .site-header .navbar-nav li.dropdown:hover > .dropdown-menu {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
@@ -164,39 +234,65 @@ h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
     }
 }
 
-/* ✅ Submenu Fix */
-.dropdown-submenu {
+/* ✅ Submenu (3rd Level) */
+.site-header .dropdown-submenu {
     position: relative;
 }
-.dropdown-submenu > .dropdown-menu {
+.site-header .dropdown-submenu > .dropdown-menu {
     top: 0;
     left: 100%;
     margin-top: -1px;
+    border-left: 3px solid var(--secondary);
+    border-radius: 0 8px 8px 8px;
+}
+.site-header .dropdown-submenu > a::after {
+    content: " ›";
+    float: right;
+    color: var(--accent);
 }
 
 /* ✅ Submenu Hover (Desktop) */
 @media (min-width: 992px) {
-    .dropdown-submenu:hover > .dropdown-menu {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-        pointer-events: auto !important;
+    .site-header .dropdown-submenu:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 }
 
-/* ✅ Mobile Dropdown (click) */
+/* ✅ Mobile Dropdown */
 @media (max-width: 991px) {
-    .dropdown-menu {
-        display: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-        pointer-events: auto !important;
+    .site-header .navbar {
+        border-bottom: none;
+        border-top: 3px solid var(--secondary);
     }
-    .dropdown-menu.show {
-        display: block !important;
+    .site-header .dropdown-menu {
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left: 3px solid var(--accent);
+        border-radius: 0;
+        box-shadow: none;
+        margin-left: 12px;
+    }
+    .site-header .dropdown-menu.show {
+        display: block;
+    }
+    .site-header .navbar .navbar-nav.mynav > li > a.nav-link {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .site-header .navbar .navbar-nav.mynav > li > a.nav-link::after {
+        display: none;
     }
 }
+/* Navar css end  here-------------------------------------------------------- */
+
+
 
 /* ✅ Logo */
 .navbar-brand img {
@@ -225,59 +321,598 @@ h5 a, h4 a, h6 a, .read-more{color: #000; text-decoration: none; }
 }
 
 /* New css end here ---------------------------------------------------------------------------- */
-/* ===== Sidebar Main Box ===== */ #secondary .card { border: none; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); background: #ffffff; } /* ===== Header ===== */ #secondary .card-header { background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 18px 25px; border: none; } #secondary .card-header h5 { margin: 0; font-size: 28px; font-weight: 700; color: #fff; } /* ===== Body ===== */ #secondary .card-body { padding: 30px 25px !important; background: #ffffff; } /* ===== Widgets spacing ===== */ #secondary .widget { margin-bottom: 28px; } #secondary .widget:last-child { margin-bottom: 0; } /* ===== Widget Titles ===== */ #secondary .widget-title { font-size: 42px; font-weight: 700; color: var(--primary); margin-bottom: 18px; line-height: 1.2; } /* ===== Search Box ===== */ #secondary .wp-block-search__inside-wrapper, #secondary .search-form { display: flex; gap: 10px; } #secondary input[type="search"], #secondary input[type="text"] { width: 100%; height: 52px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 15px; font-size: 17px; outline: none; } #secondary input[type="search"]:focus, #secondary input[type="text"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(18,114,223,.12); } /* ===== Search Button ===== */ #secondary button, #secondary input[type="submit"] { height: 52px; padding: 0 22px; border: none; border-radius: 10px; background: var(--secondary); color: #fff; font-size: 17px; font-weight: 600; transition: .3s ease; } #secondary button:hover, #secondary input[type="submit"]:hover { background: var(--primary); } /* ===== Recent Post Links ===== */ #secondary ul { list-style: none; padding: 0; margin: 0; } #secondary ul li { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #f1f1f1; } #secondary ul li:last-child { border-bottom: none; } #secondary ul li a { text-decoration: none; font-size: 20px; line-height: 1.6; color: var(--accent); font-weight: 500; transition: .3s; } #secondary ul li a:hover { color: var(--primary); padding-left: 4px; } /* ===== Categories Bullet ===== */ #secondary .widget_categories ul li::before { content: "• "; color: var(--secondary); font-weight: bold; margin-right: 6px; } /* ===== Mobile ===== */ @media (max-width: 767px) { #secondary { margin-top: 30px; } #secondary .card-body { padding: 22px 18px !important; } #secondary .widget-title { font-size: 32px; } #secondary .card-header h5 { font-size: 24px; } #secondary ul li a { font-size: 18px; } #secondary button, #secondary input[type="submit"] { padding: 0 16px; font-size: 15px; } }
-/* Hover effect for recent posts */
-.hover-bg:hover {
-    background-color: #f8f9fa;
+/* ===== Sidebar Main Box =====---------------------------------------------------------------- */
+/* ============================================================
+   PRIMARY SIDEBAR - Complete CSS
+   Parent: #secondary .widget-area
+   --primary: #062660 | --secondary: #ff5b0e | --accent: #1272df
+   ============================================================ */
+
+/* ===== Each Widget Block ===== */
+#secondary .widget {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(6, 38, 96, 0.1);
+    margin-bottom: 28px;
+    padding: 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Left content styling */
-.post-content-left img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+#secondary .widget:last-child {
+    margin-bottom: 0;
 }
 
-.post-content-left h1,
-.post-content-left h2,
-.post-content-left h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+#secondary .widget:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(6, 38, 96, 0.18);
 }
 
-/* Sidebar category list */
-.post-sidebar ul {
+/* ===== Widget Title - Classic + Block ===== */
+#secondary .widget-title,
+#secondary .widgettitle,
+#secondary .wp-block-heading {
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin: -22px -22px 16px -22px;
+    padding: 14px 22px;
+    position: relative;
+    border-left: 4px solid var(--secondary);
+}
+
+/* ===== Search Label ===== */
+#secondary .wp-block-search__label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--primary);
+    display: block;
+    margin: -22px -22px 16px -22px;
+    padding: 14px 22px;
+    border-left: 4px solid var(--secondary);
+}
+
+/* ===== Block Group Inner ===== */
+#secondary .wp-block-group__inner-container {
+    padding: 0;
+}
+
+/* ===== Search Widget ===== */
+#secondary .widget_search .search-form,
+#secondary .wp-block-search__inside-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+#secondary input[type="search"],
+#secondary input[type="text"] {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 15px;
+    outline: none;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#secondary input[type="search"]:focus,
+#secondary input[type="text"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(18, 114, 223, 0.12);
+}
+
+#secondary button,
+#secondary input[type="submit"] {
+    height: 48px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 10px;
+    background: var(--secondary);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+}
+
+#secondary button:hover,
+#secondary input[type="submit"]:hover {
+    background: var(--primary);
+}
+
+/* ===== Classic UL Lists ===== */
+#secondary ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.post-sidebar ul li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
+#secondary ul li {
+    padding: 9px 0;
+    border-bottom: 1px solid #f1f1f1;
+    transition: padding-left 0.25s ease;
 }
 
-.post-sidebar ul li a {
+#secondary ul li:last-child {
+    border-bottom: none;
+}
+
+#secondary ul li:hover {
+    padding-left: 4px;
+}
+
+#secondary ul li a {
     text-decoration: none;
-    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease;
 }
 
-.post-sidebar ul li a:hover {
-    color: #fe5c0c;
+#secondary ul li a::before {
+    content: '›';
+    color: var(--secondary);
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
-/* Tags styling */
-.post-sidebar .tags-links a {
-    display: inline-block;
-    padding: 4px 10px;
-    background: #e9ecef;
-    border-radius: 20px;
+#secondary ul li a:hover {
+    color: var(--secondary);
+}
+
+/* ===== Category Count Badge ===== */
+#secondary ul li .post-count,
+#secondary ul li a + span {
+    margin-left: auto;
+    background: rgba(18, 114, 223, 0.1);
+    color: var(--accent);
     font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+/* ===== Block Latest Posts ===== */
+#secondary .wp-block-latest-posts__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#secondary .wp-block-latest-posts__list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #f1f1f1;
+    transition: padding-left 0.25s ease;
+}
+
+#secondary .wp-block-latest-posts__list li:last-child {
+    border-bottom: none;
+}
+
+#secondary .wp-block-latest-posts__list li:hover {
+    padding-left: 4px;
+}
+
+#secondary .wp-block-latest-posts__list li a {
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease;
+}
+
+#secondary .wp-block-latest-posts__list li a::before {
+    content: '›';
+    color: var(--secondary);
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+#secondary .wp-block-latest-posts__list li a:hover {
+    color: var(--secondary);
+}
+
+/* ===== Block Categories List ===== */
+#secondary .wp-block-categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#secondary .wp-block-categories-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #f1f1f1;
+    transition: padding-left 0.25s ease;
+}
+
+#secondary .wp-block-categories-list li:last-child {
+    border-bottom: none;
+}
+
+#secondary .wp-block-categories-list li:hover {
+    padding-left: 4px;
+}
+
+#secondary .wp-block-categories-list li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease;
+}
+
+#secondary .wp-block-categories-list li a::before {
+    content: '›';
+    color: var(--secondary);
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+#secondary .wp-block-categories-list li a:hover {
+    color: var(--secondary);
+}
+
+/* ===== Recent Post Date ===== */
+#secondary .widget_recent_entries ul li .post-date,
+#secondary .wp-block-latest-posts__post-date {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+    padding-left: 22px;
+}
+
+/* ===== Tags Cloud ===== */
+#secondary .tagcloud,
+#secondary .wp-block-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#secondary .tagcloud a,
+#secondary .tag-cloud-link,
+#secondary .wp-block-tag-cloud a {
+    display: inline-block;
+    padding: 5px 14px;
+    background: rgba(18, 114, 223, 0.1);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--accent);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+#secondary .tagcloud a:hover,
+#secondary .tag-cloud-link:hover,
+#secondary .wp-block-tag-cloud a:hover {
+    background: var(--secondary);
+    color: #ffffff;
+}
+
+/* ===== Calendar Widget ===== */
+#secondary .widget_calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+#secondary .widget_calendar th {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 6px;
+    text-align: center;
+}
+
+#secondary .widget_calendar td {
+    text-align: center;
+    padding: 5px;
     color: #333;
 }
 
-.post-sidebar .tags-links a:hover {
-    background: #fe5c0c;
-    color: white;
+#secondary .widget_calendar td a {
+    color: var(--accent);
+    font-weight: 700;
 }
+
+#secondary .widget_calendar caption {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+/* ===== Text Widget ===== */
+#secondary .widget_text p,
+#secondary .widget_block p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 767px) {
+    #secondary .widget {
+        margin-bottom: 20px;
+        border-radius: 12px;
+        padding: 18px;
+    }
+    #secondary .widget-title,
+    #secondary .widgettitle,
+    #secondary .wp-block-heading {
+        font-size: 16px;
+        margin: -18px -18px 14px -18px;
+        padding: 12px 18px;
+    }
+    #secondary .wp-block-search__label {
+        font-size: 16px;
+        margin: -18px -18px 14px -18px;
+        padding: 12px 18px;
+    }
+    #secondary ul li a,
+    #secondary .wp-block-latest-posts__list li a,
+    #secondary .wp-block-categories-list li a {
+        font-size: 14px;
+    }
+    #secondary button,
+    #secondary input[type="submit"] {
+        padding: 0 14px;
+        font-size: 14px;
+    }
+}
+
+
+/* ===== Sidebar Main Box  end============================================ */
+
+/* ============================================================
+   HERO SECTION - Category Cards CSS
+   Parent Class: .herosection
+   ============================================================ */
+.herosection {
+    background-color: #f0f4fb;
+}
+
+/* ✅ Card Base */
+.herosection .card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.herosection .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(6, 38, 96, 0.25);
+}
+
+/* ✅ Card Header - Dark Background */
+.herosection .card .card-header {
+    background-color: var(--primary);
+    border: none;
+    padding:15px 22px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ Card Header Decorative Top Line */
+.herosection .card .card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+/* ✅ Category Title */
+.herosection .card .card-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+/* ✅ Title Underline */
+.herosection .card .card-header h3::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* ✅ Category Description */
+.herosection .card .card-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 10px 0 0;
+}
+
+/* ✅ Card Body - White Background */
+.herosection .card .card-body {
+    background-color: #ffffff;
+    padding: 18px 22px;
+}
+
+/* ✅ Post List */
+.herosection .card-body ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ List Item */
+.herosection .card-body ul li {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 9px 0;
+    transition: padding-left 0.25s ease;
+}
+
+.herosection .card-body ul li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.herosection .card-body ul li:hover {
+    padding-left: 6px;
+}
+
+/* ✅ Post Links */
+.herosection .card-body ul li a {
+    color: #333333;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ✅ Arrow Icon */
+.herosection .card-body ul li a::before {
+    content: '›';
+    color: var(--secondary);
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+/* ✅ Link Hover */
+.herosection .card-body ul li a:hover {
+    color: var(--accent);
+}
+
+.herosection .card-body ul li a:hover::before {
+    transform: translateX(3px);
+}
+
+/* ✅ No Posts */
+.herosection .card-body ul li:only-child {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+/* ✅ Mobile */
+@media (max-width: 767px) {
+    .herosection .card .card-header {
+        padding: 20px 18px 16px;
+    }
+    .herosection .card .card-header h3 {
+        font-size: 18px;
+    }
+    .herosection .card .card-body {
+        padding: 14px 18px;
+    }
+    .herosection .card-body ul li a {
+        font-size: 14px;
+    }
+}
+
+/* ============================================================
+End of HERO SECTION - Category Cards CSS
+   ============================================================ */
+
+/* ============================================================
+ONLY QUIZ PAGE  start here
+ ============================================================ */
+
+.quiz-page-wrap .card{
+    border:0;
+    border-radius:18px;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+}
+
+.quiz-page-wrap .card-body h3{
+    color:var(--primary);
+    font-weight:700;
+    border-left:4px solid var(--secondary);
+    padding-left:14px;
+}
+
+/* Question Box */
+.quiz-page-wrap .question-block .bg-light{
+    background:#f8fbff !important;
+    border:1px solid #dce9ff;
+    border-radius:14px;
+}
+
+/* Options */
+.quiz-page-wrap .quiz-option{
+    display:block;
+    background:#fff;
+    border:2px solid #dbe7ff;
+    border-radius:14px;
+    padding:14px;
+    font-weight:600;
+    color:var(--primary);
+    transition:.3s;
+}
+
+.quiz-page-wrap .quiz-option:hover{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+}
+
+.quiz-page-wrap .form-check-input:checked + .quiz-option{
+    background:linear-gradient(135deg,var(--accent),var(--primary));
+    color:#fff;
+    border-color:var(--accent);
+}
+
+/* Buttons */
+.quiz-page-wrap #nextQuestion{
+    background:var(--secondary);
+    border:none;
+    border-radius:12px;
+}
+
+.quiz-page-wrap #submitQuiz{
+    background:var(--accent);
+    border:none;
+    border-radius:12px;
+}
+
+/* Sidebar */
+.quiz-page-wrap .widget,
+.quiz-page-wrap aside{
+    background:#fff;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 10px 22px rgba(0,0,0,.05);
+    margin-bottom:25px;
+}
+
+.quiz-page-wrap .widget-title{
+    color:var(--primary);
+    font-weight:700;
+}
+/* ============================================================
+ONLY QUIZ PAGE  end here
+ ============================================================ */
