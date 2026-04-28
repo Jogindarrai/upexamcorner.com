@@ -105,7 +105,7 @@ get_header();
                                                         while ($related_posts->have_posts()) {
                                                             $related_posts->the_post();
                                                 ?>
-                                                            <div class="col-md-3 mb-4">
+                                                            <div class="col-md-4 mb-4">
                                                                 <div class="related-post-card">
                                                                     <?php if (has_post_thumbnail()) : ?>
                                                                         <a href="<?php the_permalink(); ?>">
