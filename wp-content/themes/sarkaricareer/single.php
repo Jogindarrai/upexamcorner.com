@@ -141,8 +141,8 @@ get_header();
                                     <!-- Right Side - Sidebar -->
                                     <div class="col-lg-4 col-md-5">
                                     <div class="post-sidebar">
-    <?php get_sidebar(); ?>
-</div>
+                                  <?php get_sidebar(); ?>
+                                     </div>
                                     </div>
                                     <!-- Right Side End -->
                                 </div>

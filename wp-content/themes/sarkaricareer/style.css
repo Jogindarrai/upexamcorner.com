@@ -1066,3 +1066,158 @@ ONLY QUIZ PAGE  start here
 /* ============================================================
 End of HERO SECTION HEADER - Option A (White Card)
    ============================================================ */
+.tagcategories{
+    background:#f8f9fa;
+    padding:18px 22px;
+    border-radius:12px;
+    border-left:4px solid var(--primary);
+    margin-top:25px;
+    margin-bottom:25px;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.05);
+}
+
+.tagcategories p{
+    margin:0 0 12px;
+    font-size:16px;
+    color:#212529;
+    line-height:1.6;
+}
+
+.tagcategories p:last-child{
+    margin-bottom:0;
+}
+
+.tagcategories strong{
+    color:var(--primary);
+    font-weight:700;
+    margin-right:6px;
+}
+
+/* Links */
+.tagcategories a{
+    display:inline-block;
+    background:#fff;
+    color:var(--primary);
+    border:1px solid #dee2e6;
+    padding:6px 12px;
+    margin:4px 6px 4px 0;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    transition:all .25s ease;
+}
+
+/* Hover */
+.tagcategories a:hover{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+    transform:translateY(-2px);
+}
+
+/* Tag Style Different Color */
+.tagcategories p:last-child a:hover{
+    background:var(--secondary);
+    border-color:var(--secondary);
+    color:#fff;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .tagcategories{
+        padding:15px;
+    }
+
+    .tagcategories a{
+        font-size:13px;
+        padding:5px 10px;
+    }
+}
+/* Main Section */
+.relatedpost{
+    margin-top:35px;
+    margin-bottom:35px;
+    padding:25px;
+    background:#f8f9fa;
+    border-radius:14px;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.05);
+}
+
+/* Heading */
+.relatedpost h3{
+    font-size:28px;
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:25px;
+    padding-bottom:10px;
+    border-bottom:2px solid #e9ecef;
+}
+
+/* Card */
+.related-post-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    height:100%;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.08);
+    transition:all .3s ease;
+}
+
+.related-post-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.12);
+}
+
+/* Image */
+.related-post-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    transition:transform .3s ease;
+}
+
+.related-post-card:hover img{
+    transform:scale(1.05);
+}
+
+/* Title */
+.related-post-title{
+    margin:0;
+    padding:15px;
+    font-size:16px;
+    line-height:1.5;
+    font-weight:600;
+}
+
+/* Link */
+.related-post-title a{
+    color:#212529;
+    text-decoration:none;
+    transition:color .25s ease;
+}
+
+.related-post-title a:hover{
+    color:var(--primary);
+}
+
+/* Mobile */
+@media(max-width:991px){
+    .related-post-card img{
+        height:160px;
+    }
+}
+
+@media(max-width:767px){
+    .relatedpost{
+        padding:18px;
+    }
+
+    .relatedpost h3{
+        font-size:24px;
+    }
+
+    .related-post-card img{
+        height:200px;
+    }
+}

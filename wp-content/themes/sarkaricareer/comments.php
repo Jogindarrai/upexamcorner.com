@@ -15,7 +15,6 @@ if ( post_password_required() ) {
             );
             ?>
         </h2>
-
         <ul class="comment-list">
             <?php
             wp_list_comments();
