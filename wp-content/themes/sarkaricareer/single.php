@@ -15,7 +15,7 @@ get_header();
                                 <div class="row g-4">
                                     <!-- Left Side - Main Content -->
                                     <div class="col-lg-8 col-md-7">
-                                        <div class="bg-white p-3">
+                                        <div class="bg-white p-3 ">
                                             <!-- Heading -->
                                             <h1><?php the_title(); ?></h1>
                                             <!-- Breadcrumb -->
@@ -45,7 +45,7 @@ get_header();
                                                 <span><?php echo get_the_date(); ?></span>
                                             </div>
                                             <!-- Post Content -->
-                                            <div class="post-content-left mt-4">
+                                            <div class="mt-4 blog-details">
                                                 <?php the_content(); ?>
                                             </div>
                                             <!-- Post Views + Share -->
@@ -127,11 +127,14 @@ get_header();
                                             </section>
 
                                             <!-- Comments -->
+                                             <div class="wp-comment">
                                             <?php
                                             if (comments_open() || get_comments_number()) :
                                                 comments_template();
                                             endif;
                                             ?>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- Left Side End -->
