@@ -1221,3 +1221,90 @@ End of HERO SECTION HEADER - Option A (White Card)
         height:200px;
     }
 }
+
+.page{
+    padding:40px 0;
+    background:#f8f9fa;
+}
+
+/* Main Content Box */
+.page article{
+    background:#fff;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.06);
+    margin-bottom:30px;
+}
+
+/* Heading */
+.page article h1{
+    font-size:38px;
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:20px;
+    padding-bottom:12px;
+    border-bottom:2px solid #eef1f4;
+    line-height:1.3;
+}
+
+/* Content */
+.page article p{
+    font-size:17px;
+    line-height:1.8;
+    color:#212529;
+    margin-bottom:18px;
+}
+
+/* Links */
+.page article a{
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.page article a:hover{
+    color:var(--secondary);
+    text-decoration:underline;
+}
+
+/* Images */
+.page article img{
+    max-width:100%;
+    height:auto;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+/* Sidebar */
+.page .sidebar{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.06);
+    padding:20px;
+}
+
+/* Mobile */
+@media(max-width:991px){
+    .page article h1{
+        font-size:32px;
+    }
+}
+
+@media(max-width:767px){
+    .page{
+        padding:25px 0;
+    }
+
+    .page article{
+        padding:20px;
+    }
+
+    .page article h1{
+        font-size:28px;
+    }
+
+    .page article p{
+        font-size:16px;
+        line-height:1.7;
+    }
+}
