@@ -1,10 +1,17 @@
 /*
-Theme Name: sarkaricareer
-Theme URI: http://example.com/my-custom-theme
+Theme Name: UpexamCorner
+Theme URI: https://www.upexamcorner.com/
 Author: Jogindar Rai Das
-Author URI: http://example.com
-Description: A custom theme for WordPress.
+Author URI: https://www.upexamcorner.com/
+Description: UpexamCorner is a fast, clean, responsive and SEO friendly WordPress theme specially designed for education websites, exam updates, job alerts, admit card, result and online form portals.
 Version: 1.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: upexamcorner
+Tags: education, blog, news, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, responsive-layout, seo-friendly
 */
 /* ===== Theme Colors ===== */
  :root{ --primary:#062660; --secondary:#ff5b0e; --accent:#1272df; }
