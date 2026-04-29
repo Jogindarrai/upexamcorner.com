@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<section>
+<section class="custom-page">
     <div class="container-xxl">
         <div class="row">
             <div class="col-md-8">

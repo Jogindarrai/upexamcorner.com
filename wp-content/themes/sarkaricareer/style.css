@@ -10,6 +10,10 @@ Version: 1.0
  :root{ --primary:#062660; --secondary:#ff5b0e; --accent:#1272df; }
 
 /*Global CSS Start here -----------------------  */
+html, body {
+  margin: 0;
+  padding: 0;
+}
 a{ color: #000; text-decoration: none;}
 .text-black{ color: #000;}
 
@@ -1222,13 +1226,13 @@ End of HERO SECTION HEADER - Option A (White Card)
     }
 }
 
-.page{
+.custom-page{
     padding:40px 0;
     background:#f8f9fa;
 }
 
 /* Main Content Box */
-.page article{
+.custom-page article{
     background:#fff;
     padding:30px;
     border-radius:14px;
@@ -1237,7 +1241,7 @@ End of HERO SECTION HEADER - Option A (White Card)
 }
 
 /* Heading */
-.page article h1{
+.custom-page article h1{
     font-size:38px;
     font-weight:700;
     color:var(--primary);
@@ -1248,7 +1252,7 @@ End of HERO SECTION HEADER - Option A (White Card)
 }
 
 /* Content */
-.page article p{
+.custom-page article p{
     font-size:17px;
     line-height:1.8;
     color:#212529;
@@ -1256,19 +1260,19 @@ End of HERO SECTION HEADER - Option A (White Card)
 }
 
 /* Links */
-.page article a{
+.custom-page article a{
     color:var(--accent);
     text-decoration:none;
     font-weight:600;
 }
 
-.page article a:hover{
+.custom-page article a:hover{
     color:var(--secondary);
     text-decoration:underline;
 }
 
 /* Images */
-.page article img{
+.custom-page article img{
     max-width:100%;
     height:auto;
     border-radius:10px;
@@ -1276,7 +1280,7 @@ End of HERO SECTION HEADER - Option A (White Card)
 }
 
 /* Sidebar */
-.page .sidebar{
+.custom-page .sidebar{
     background:#fff;
     border-radius:14px;
     box-shadow:0 .125rem .25rem rgba(0,0,0,.06);
@@ -1291,19 +1295,19 @@ End of HERO SECTION HEADER - Option A (White Card)
 }
 
 @media(max-width:767px){
-    .page{
+    .custom-page{
         padding:25px 0;
     }
 
-    .page article{
+    .custom-page article{
         padding:20px;
     }
 
-    .page article h1{
+    .custom-page article h1{
         font-size:28px;
     }
 
-    .page article p{
+    .custom-page article p{
         font-size:16px;
         line-height:1.7;
     }
